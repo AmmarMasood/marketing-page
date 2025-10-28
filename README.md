@@ -224,8 +224,6 @@ Add specific error messages and recovery options:
 - CMS unavailable → "Service temporarily unavailable" + fallback content
 - Invalid data → Log to Sentry, show placeholder content
 
-### Medium-term Improvements
-
 **Testing**
 
 Currently no tests. I'd add unit test (Jest + React Testing Library) to test each component in isolation.
