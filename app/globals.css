@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #4361ee;
+  --primary-dark: #3451d4;
+  --secondary: #14447C;
+  --secondary-dark: #122031;
+
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --text-light: #94a3b8;
+
+  --border: #e2e8f0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-text-dark: var(--text-dark);
+  --color-text-gray: var(--text-gray);
+  --color-text-light: var(--text-light);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@layer utilities {
+  .section-heading {
+    @apply mb-3 text-3xl font-bold text-text-dark md:text-4xl;
+  }
+  
+  .section-description {
+    @apply mx-auto max-w-2xl text-base text-text-gray md:text-lg;
+  }
+  
+  .section-label {
+    @apply mb-2 text-sm font-semibold uppercase tracking-wider text-primary;
+  }
 }
